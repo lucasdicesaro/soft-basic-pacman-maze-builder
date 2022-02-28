@@ -512,6 +512,34 @@ void drawTarget(int x, int y, color c) {
   stroke(0);
 }
 
+void drawGridCell(int x, int y, GridCell gridCell) {
+  drawNumber(x + 2, y, gridCell.code);
+  drawText(x + 4, y, gridCell.description);
+}
+
+void drawNumber(int x, int y, int number) {
+  textFont(f, 16);
+  fill(255);
+  drawBlackCellInSection(x, y, x + 3, y + 1);
+  text(nf(number, 3), cellToCoord(x), cellToCoord(y+1));
+}
+
+void drawText(int x, int y, String text) {
+  textFont(f, 16);
+  fill(255);
+  drawBlackCellInSection(x, y, x + 25, y + 1);
+  text(text, cellToCoord(x), cellToCoord(y+1));
+}
+
+
+void drawBlackCellInSection(int fromX, int fromY, int toX, int toY) {
+  for(int x = fromX; x <= toX; x++) {
+    for(int y = fromY; y <= toY; y++) {
+      drawBlackCell(cellToCoord(x), cellToCoord(y));
+    }
+  }
+}
+
 /* Walls */
 void drawBlueWallInCellGrid(int x, int y, int wallId) {
   drawCorridorInCellGrid(x, y);

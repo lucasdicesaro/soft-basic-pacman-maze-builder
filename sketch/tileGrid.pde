@@ -45,46 +45,46 @@ final int BLUE_GHOST_TYPE = 169;
 final int ORANGE_GHOST_TYPE = 170;
 
 final GridCell[] allElementTypes = new GridCell[] {
-  new GridCell(TEST_CELL),
-  new GridCell(INVISIBLE_WALL),
-  new GridCell(DOUBLE_WALL_VERTICAL_LEFT),
-  new GridCell(DOUBLE_WALL_VERTICAL_RIGHT),
-  new GridCell(DOUBLE_WALL_HORIZONTAL_TOP),
-  new GridCell(DOUBLE_WALL_HORIZONTAL_BOTTOM),
-  new GridCell(DOUBLE_CORNER_TOP_LEFT),
-  new GridCell(DOUBLE_CORNER_TOP_RIGHT),
-  new GridCell(DOUBLE_CORNER_BOTTOM_LEFT),
-  new GridCell(DOUBLE_CORNER_BOTTOM_RIGHT),
-  new GridCell(DOUBLE_MIDDLE_CORNER_HORIZONTAL_TOP_LEFT),
-  new GridCell(DOUBLE_MIDDLE_CORNER_HORIZONTAL_TOP_RIGHT),
-  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_LEFT_BOTTOM_LEFT),
-  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_LEFT_TOP_LEFT),
-  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_RIGHT_BOTTOM_RIGHT),
-  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_RIGHT_TOP_RIGHT),
-  new GridCell(SIMPLE_WALL_VERTICAL_LEFT),
-  new GridCell(SIMPLE_WALL_VERTICAL_RIGHT),
-  new GridCell(SIMPLE_WALL_HORIZONTAL_TOP),
-  new GridCell(SIMPLE_WALL_HORIZONTAL_BOTTOM),
-  new GridCell(SIMPLE_CORNER_TOP_LEFT),
-  new GridCell(SIMPLE_CORNER_TOP_RIGHT),
-  new GridCell(SIMPLE_CORNER_BOTTOM_LEFT),
-  new GridCell(SIMPLE_CORNER_BOTTOM_RIGHT),
-  new GridCell(SIMPLE_CONVEX_CORNER_TOP_LEFT),
-  new GridCell(SIMPLE_CONVEX_CORNER_TOP_RIGHT),
-  new GridCell(SIMPLE_CONVEX_CORNER_BOTTOM_LEFT),
-  new GridCell(SIMPLE_CONVEX_CORNER_BOTTOM_RIGHT),
-  new GridCell(UP_RESTRICTED_POSITION_WITH_PELLET),
-  new GridCell(UP_RESTRICTED_POSITION_WITHOUT_PELLET),
-  new GridCell(TUNNEL_BOUNDS_WITH_PELLET),
-  new GridCell(TUNNEL_BOUNDS_WITHOUT_PELLET),
-  new GridCell(PELLET),
-  new GridCell(POWER_PELLET),
-  new GridCell(CORRIDOR),
-  new GridCell(PACMAN_TYPE),
-  new GridCell(RED_GHOST_TYPE),
-  new GridCell(PINK_GHOST_TYPE),
-  new GridCell(BLUE_GHOST_TYPE),
-  new GridCell(ORANGE_GHOST_TYPE)
+  new GridCell(TEST_CELL, "TEST_CELL"),
+  new GridCell(INVISIBLE_WALL, "INVISIBLE_WALL"),
+  new GridCell(DOUBLE_WALL_VERTICAL_LEFT, "DOUBLE_WALL_VERTICAL_LEFT"),
+  new GridCell(DOUBLE_WALL_VERTICAL_RIGHT, "DOUBLE_WALL_VERTICAL_RIGHT"),
+  new GridCell(DOUBLE_WALL_HORIZONTAL_TOP, "DOUBLE_WALL_HORIZONTAL_TOP"),
+  new GridCell(DOUBLE_WALL_HORIZONTAL_BOTTOM, "DOUBLE_WALL_HORIZONTAL_BOTTOM"),
+  new GridCell(DOUBLE_CORNER_TOP_LEFT, "DOUBLE_CORNER_TOP_LEFT"),
+  new GridCell(DOUBLE_CORNER_TOP_RIGHT, "DOUBLE_CORNER_TOP_RIGHT"),
+  new GridCell(DOUBLE_CORNER_BOTTOM_LEFT, "DOUBLE_CORNER_BOTTOM_LEFT"),
+  new GridCell(DOUBLE_CORNER_BOTTOM_RIGHT, "DOUBLE_CORNER_BOTTOM_RIGHT"),
+  new GridCell(DOUBLE_MIDDLE_CORNER_HORIZONTAL_TOP_LEFT, "DOUBLE_MIDDLE_CORNER_HORIZONTAL_TOP_LEFT"),
+  new GridCell(DOUBLE_MIDDLE_CORNER_HORIZONTAL_TOP_RIGHT, "DOUBLE_MIDDLE_CORNER_HORIZONTAL_TOP_RIGHT"),
+  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_LEFT_BOTTOM_LEFT, "DOUBLE_MIDDLE_CORNER_VERTICAL_LEFT_BOTTOM_LEFT"),
+  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_LEFT_TOP_LEFT, "DOUBLE_MIDDLE_CORNER_VERTICAL_LEFT_TOP_LEFT"),
+  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_RIGHT_BOTTOM_RIGHT, "DOUBLE_MIDDLE_CORNER_VERTICAL_RIGHT_BOTTOM_RIGHT"),
+  new GridCell(DOUBLE_MIDDLE_CORNER_VERTICAL_RIGHT_TOP_RIGHT, "DOUBLE_MIDDLE_CORNER_VERTICAL_RIGHT_TOP_RIGHT"),
+  new GridCell(SIMPLE_WALL_VERTICAL_LEFT, "SIMPLE_WALL_VERTICAL_LEFT"),
+  new GridCell(SIMPLE_WALL_VERTICAL_RIGHT, "SIMPLE_WALL_VERTICAL_RIGHT"),
+  new GridCell(SIMPLE_WALL_HORIZONTAL_TOP, "SIMPLE_WALL_HORIZONTAL_TOP"),
+  new GridCell(SIMPLE_WALL_HORIZONTAL_BOTTOM, "SIMPLE_WALL_HORIZONTAL_BOTTOM"),
+  new GridCell(SIMPLE_CORNER_TOP_LEFT, "SIMPLE_CORNER_TOP_LEFT"),
+  new GridCell(SIMPLE_CORNER_TOP_RIGHT, "SIMPLE_CORNER_TOP_RIGHT"),
+  new GridCell(SIMPLE_CORNER_BOTTOM_LEFT, "SIMPLE_CORNER_BOTTOM_LEFT"),
+  new GridCell(SIMPLE_CORNER_BOTTOM_RIGHT, "SIMPLE_CORNER_BOTTOM_RIGHT"),
+  new GridCell(SIMPLE_CONVEX_CORNER_TOP_LEFT, "SIMPLE_CONVEX_CORNER_TOP_LEFT"),
+  new GridCell(SIMPLE_CONVEX_CORNER_TOP_RIGHT, "SIMPLE_CONVEX_CORNER_TOP_RIGHT"),
+  new GridCell(SIMPLE_CONVEX_CORNER_BOTTOM_LEFT, "SIMPLE_CONVEX_CORNER_BOTTOM_LEFT"),
+  new GridCell(SIMPLE_CONVEX_CORNER_BOTTOM_RIGHT, "SIMPLE_CONVEX_CORNER_BOTTOM_RIGHT"),
+  new GridCell(UP_RESTRICTED_POSITION_WITH_PELLET, "UP_RESTRICTED_POSITION_WITH_PELLET"),
+  new GridCell(UP_RESTRICTED_POSITION_WITHOUT_PELLET, "UP_RESTRICTED_POSITION_WITHOUT_PELLET"),
+  new GridCell(TUNNEL_BOUNDS_WITH_PELLET, "TUNNEL_BOUNDS_WITH_PELLET"),
+  new GridCell(TUNNEL_BOUNDS_WITHOUT_PELLET, "TUNNEL_BOUNDS_WITHOUT_PELLET"),
+  new GridCell(PELLET, "PELLET"),
+  new GridCell(POWER_PELLET, "POWER_PELLET"),
+  new GridCell(CORRIDOR, "CORRIDOR"),
+  new GridCell(PACMAN_TYPE, "PACMAN_TYPE"),
+  new GridCell(RED_GHOST_TYPE, "RED_GHOST_TYPE"),
+  new GridCell(PINK_GHOST_TYPE, "PINK_GHOST_TYPE"),
+  new GridCell(BLUE_GHOST_TYPE, "BLUE_GHOST_TYPE"),
+  new GridCell(ORANGE_GHOST_TYPE, "ORANGE_GHOST_TYPE")
 };
 
 // Default values
@@ -150,6 +150,7 @@ final int[] allCharacterTypes = new int[] {
   ORANGE_GHOST_TYPE
 };
 
+GridCell selectedElement = allElementTypes[0];
 
 class TileGrid {
   int[][] grid;
@@ -205,12 +206,22 @@ class TileGrid {
   }
   
   void renderAllElements() {
-    int y = 1;
+    int columnNumber = 1;
+    int cellY = 0;
     for (int i = 0; i < allElementTypes.length; i++) {
-      if (i % 10 == 0) {
-        y++;
+      cellY++;
+      if (isCharacter(allElementTypes[i].code)) {
+        cellY++;
       }
-      drawElement(MAX_COLS + 5 + (i % 10) * 2, y * 2, allElementTypes[i].value);
+      if (cellY > MAX_ROWS) {
+        columnNumber = columnNumber + 25;
+        cellY = 1;
+      }
+      int cellX = MAX_COLS + columnNumber;
+      drawElement(cellX, cellY, allElementTypes[i].code);
+      drawGridCell(cellX, cellY, allElementTypes[i]);
+      allElementTypes[i].x = cellX;
+      allElementTypes[i].y = cellY;
     }
   }
 
@@ -253,6 +264,7 @@ class TileGrid {
   }
 
   void drawElement(int x, int y, int value) {
+    drawBlackCellInSection(x, y, x + 1, y + 1);
     if (isWall(value)) {
       drawBlueWallInCellGrid(x, y, value);
     } else {
@@ -357,6 +369,24 @@ class TileGrid {
     return coord == cuantizeCoord(coord) + (CELL_SIZE / 2);
   }
 
+  boolean isAnyElement(int x, int y) {
+    for (int i = 0; i < allElementTypes.length; i++) {
+      if (x == allElementTypes[i].x && y == allElementTypes[i].y) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  GridCell getElementCode(int x, int y) {
+    for (int i = 0; i < allElementTypes.length; i++) {
+      if (x == allElementTypes[i].x && y == allElementTypes[i].y) {
+        return allElementTypes[i];
+      }
+    }
+    return null;
+  }
+
   void cleanTile(int x, int y) {
     setTileValue(x, y, 0);
   }
@@ -375,7 +405,7 @@ class TileGrid {
     }
     println("All element types:");
     for (int x = 0; x < allElementTypes.length; x++) {
-      println(allElementTypes[x].value);
+      println("x " + nf(allElementTypes[x].x, 3) + ", y " + nf(allElementTypes[x].y, 3), ": " + allElementTypes[x].code);
     }
     println("MAZE_INIT_X: " + MAZE_INIT_X + "\nMAZE_INIT_Y: " + MAZE_INIT_Y + "\nMAZE_END_X: " + MAZE_END_X + "\nMAZE_END_Y: " + MAZE_END_Y + 
           "\nMAZE_MIN_COORD_X: " + MAZE_MIN_COORD_X + "\nMAZE_MIN_COORD_Y: " + MAZE_MIN_COORD_Y + "\nMAZE_MAX_COORD_X: " + MAZE_MAX_COORD_X + "\nMAZE_MAX_COORD_Y: " + MAZE_MAX_COORD_Y + 

@@ -48,3 +48,48 @@ void keyPressed() {
 void keyReleased() {
   keyboard.releaseUserKey();
 }
+
+void mousePressed() {
+  int row = mouseY;
+  int col = mouseX;
+  //if (grid[row][col] == 0) {
+  //}
+  println(row + "," + col);
+}
+
+void mouseClicked() {
+  int cellX = coordToCell(mouseX);
+  int cellY = coordToCell(mouseY);
+  if (cellX > MAX_COLS || cellY > MAX_ROWS) { // Is outside the maze?
+    if (tileGrid.getElementCode(cellX, cellY) != null) { // Is element selected?
+      selectedElement = tileGrid.getElementCode(cellX, cellY);
+      drawText(MAX_COLS + 25, MAX_ROWS - 2, "Selected element:");
+      tileGrid.drawElement(MAX_COLS + 25, MAX_ROWS, selectedElement.code);
+      drawGridCell(MAX_COLS + 25, MAX_ROWS, selectedElement);
+      //println(cellX + "," + cellY + ": " + selectedElement.code);
+    }
+  } else {
+    // Inside the maze
+    // TODO: Write the selected element in the grid. Update the screen.
+    // TODO: Generate file with the grid content.
+  }
+  //int coordX = cellToCoord(cellX);
+  //int coordY = cellToCoord(cellY);
+  //println(coordX + "," + coordY);
+}
+
+void mouseReleased() {
+  //println("mouseReleased");
+}
+
+void mouseMoved() {
+  //println("mouseMoved");
+}
+
+void mouseDragged() {
+  //println("mouseDragged ");
+}
+
+void mouseWheel() {
+  //println("mouseWheel");
+}
