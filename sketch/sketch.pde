@@ -20,8 +20,7 @@ void setup() {
 
   keyboard = new Keyboard();
 
-  int CURRENT_LEVEL = 1; // TODO Remove this
-  mapFile = new MapFile(CURRENT_LEVEL);
+  mapFile = new MapFile();
   tileGrid = mapFile.fillGrid();
   tileGrid.initializeSpecialVariables();
   tileGrid.renderGrid();
@@ -29,7 +28,6 @@ void setup() {
 }
 
 void draw() {
-
 
 }
 
@@ -63,14 +61,21 @@ void mouseClicked() {
   if (cellX > MAX_COLS || cellY > MAX_ROWS) { // Is outside the maze?
     if (tileGrid.getElementCode(cellX, cellY) != null) { // Is element selected?
       selectedElement = tileGrid.getElementCode(cellX, cellY);
+      // Draw label
       drawText(MAX_COLS + 25, MAX_ROWS - 2, "Selected element:");
+      // Clean cells
+      drawBlackCellInSection(MAX_COLS + 24, MAX_ROWS, MAX_COLS + 26, MAX_ROWS + 1);
+      // Draw element
       tileGrid.drawElement(MAX_COLS + 25, MAX_ROWS, selectedElement.code);
+      // Draw code and description
       drawGridCell(MAX_COLS + 25, MAX_ROWS, selectedElement);
       //println(cellX + "," + cellY + ": " + selectedElement.code);
     }
   } else {
     // Inside the maze
-    // TODO: Write the selected element in the grid. Update the screen.
+      //selectedElement = tileGrid.getElementCode(cellX, cellY);
+      tileGrid.writeElement(cellX, cellY, selectedElement.code);
+
     // TODO: Generate file with the grid content.
   }
   //int coordX = cellToCoord(cellX);
@@ -87,7 +92,11 @@ void mouseMoved() {
 }
 
 void mouseDragged() {
-  //println("mouseDragged ");
+  int cellX = coordToCell(mouseX);
+  int cellY = coordToCell(mouseY);
+  if (cellX < MAX_COLS && cellY < MAX_ROWS) { // Is inside the maze?
+    tileGrid.writeElement(cellX, cellY, selectedElement.code);
+  }
 }
 
 void mouseWheel() {

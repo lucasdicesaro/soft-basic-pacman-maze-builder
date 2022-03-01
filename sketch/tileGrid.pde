@@ -44,6 +44,8 @@ final int PINK_GHOST_TYPE = 168;
 final int BLUE_GHOST_TYPE = 169;
 final int ORANGE_GHOST_TYPE = 170;
 
+GridCell defaultElement = new GridCell(CORRIDOR, "CORRIDOR");
+
 final GridCell[] allElementTypes = new GridCell[] {
   new GridCell(TEST_CELL, "TEST_CELL"),
   new GridCell(INVISIBLE_WALL, "INVISIBLE_WALL"),
@@ -79,7 +81,7 @@ final GridCell[] allElementTypes = new GridCell[] {
   new GridCell(TUNNEL_BOUNDS_WITHOUT_PELLET, "TUNNEL_BOUNDS_WITHOUT_PELLET"),
   new GridCell(PELLET, "PELLET"),
   new GridCell(POWER_PELLET, "POWER_PELLET"),
-  new GridCell(CORRIDOR, "CORRIDOR"),
+  defaultElement,
   new GridCell(PACMAN_TYPE, "PACMAN_TYPE"),
   new GridCell(RED_GHOST_TYPE, "RED_GHOST_TYPE"),
   new GridCell(PINK_GHOST_TYPE, "PINK_GHOST_TYPE"),
@@ -150,7 +152,7 @@ final int[] allCharacterTypes = new int[] {
   ORANGE_GHOST_TYPE
 };
 
-GridCell selectedElement = allElementTypes[0];
+GridCell selectedElement = defaultElement;
 
 class TileGrid {
   int[][] grid;
@@ -264,7 +266,7 @@ class TileGrid {
   }
 
   void drawElement(int x, int y, int value) {
-    drawBlackCellInSection(x, y, x + 1, y + 1);
+    //drawBlackCellInSection(x, y, x, y);
     if (isWall(value)) {
       drawBlueWallInCellGrid(x, y, value);
     } else {
@@ -306,6 +308,11 @@ class TileGrid {
           break;
       }
     }
+  }
+
+  void writeElement(int x, int y, int value) {
+    setTileValue(x, y, value);
+    drawElement(x, y, value);
   }
 
   int validateCoordinate(int coordinate, int maxValue) {
@@ -384,7 +391,7 @@ class TileGrid {
         return allElementTypes[i];
       }
     }
-    return null;
+    return defaultElement;
   }
 
   void cleanTile(int x, int y) {
