@@ -25,6 +25,9 @@ void setup() {
   tileGrid.initializeSpecialVariables();
   tileGrid.renderGrid();
   tileGrid.renderAllElements();
+
+  // Draw label
+  drawText(MAX_COLS + 25, MAX_ROWS - 2, "Selected element:");
 }
 
 void draw() {
@@ -61,10 +64,8 @@ void mouseClicked() {
   if (cellX > MAX_COLS || cellY > MAX_ROWS) { // Is outside the maze?
     if (tileGrid.getElementCode(cellX, cellY) != null) { // Is element selected?
       selectedElement = tileGrid.getElementCode(cellX, cellY);
-      // Draw label
-      drawText(MAX_COLS + 25, MAX_ROWS - 2, "Selected element:");
       // Clean cells
-      drawBlackCellInSection(MAX_COLS + 24, MAX_ROWS, MAX_COLS + 26, MAX_ROWS + 1);
+      drawBlackCellInSection(MAX_COLS + 24, MAX_ROWS, MAX_COLS + 50, MAX_ROWS);
       // Draw element
       tileGrid.drawElement(MAX_COLS + 25, MAX_ROWS, selectedElement.code);
       // Draw code and description

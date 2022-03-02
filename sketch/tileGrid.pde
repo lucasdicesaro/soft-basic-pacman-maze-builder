@@ -266,7 +266,6 @@ class TileGrid {
   }
 
   void drawElement(int x, int y, int value) {
-    //drawBlackCellInSection(x, y, x, y);
     if (isWall(value)) {
       drawBlueWallInCellGrid(x, y, value);
     } else {
