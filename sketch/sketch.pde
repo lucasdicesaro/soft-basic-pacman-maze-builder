@@ -43,6 +43,9 @@ void keyPressed() {
     printScaleVariables();
     mapFile.debug();
     tileGrid.debug();
+  } else if (key == 'w') {
+    // write file
+    mapFile.dumpGridToFile(tileGrid);
   }
 }
 
@@ -51,11 +54,11 @@ void keyReleased() {
 }
 
 void mousePressed() {
-  int row = mouseY;
-  int col = mouseX;
+  //int row = mouseY;
+  //int col = mouseX;
   //if (grid[row][col] == 0) {
   //}
-  println(row + "," + col);
+  //println(row + "," + col);
 }
 
 void mouseClicked() {

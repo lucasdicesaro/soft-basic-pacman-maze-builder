@@ -33,4 +33,24 @@ class MapFile {
   String[] getLines() {
     return lines;
   }
+
+  void dumpGridToFile(TileGrid tileGrid) {
+    // Create a new file in the sketch directory
+    PrintWriter output = createWriter("maps/generated_map.txt");
+
+    for (int y = 0; y < MAX_ROWS; y++) {
+      for (int x = 0; x < MAX_COLS; x++) {
+        output.print(nf(tileGrid.getTileValue(x, y), 3)); // Write the value to the file
+        if (x < MAX_COLS - 1) {
+          output.print(",");
+        }
+      }
+      if (y < MAX_ROWS - 1) {
+        output.println("");
+      }
+    }
+
+    output.flush(); // Writes the remaining data to the file
+    output.close(); // Finishes the file
+  }
 } 
