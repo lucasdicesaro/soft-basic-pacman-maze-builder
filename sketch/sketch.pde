@@ -28,6 +28,9 @@ void setup() {
 
   // Draw label
   drawText(MAX_COLS + 25, MAX_ROWS - 2, "Selected element:");
+
+  // Draw menu
+  drawText(5, MAX_ROWS - 0, "w - generate maze file");
 }
 
 void draw() {
